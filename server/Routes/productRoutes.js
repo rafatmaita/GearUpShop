@@ -11,7 +11,11 @@ router.put('/editProduct/:productId', productController.editProduct);
 router.put('/deleteProduct/:productId', productController.deleteProduct);
 router.get('/getProductsWithImage',authorization.authorize, productController.getProductsWithImage);
 router.put('/addOrUpdateImageUrl/:productId', productController.addOrUpdateImageUrl);
+<<<<<<< HEAD
 router.get('/details/:productId', productController.getProductWithImage);
+=======
+router.get('/details/:productId',authorization.authorize, productController.getProductWithImage);
+>>>>>>> eedb2127506b69053c1bdb65881ce95bba450471
 
 
 

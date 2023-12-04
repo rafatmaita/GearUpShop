@@ -238,7 +238,11 @@ exports.getProductWithImage = async (req, res) => {
 
         const productWithImage = await Product.aggregate([
             {
+<<<<<<< HEAD
                 $match: { isDeleted: false }
+=======
+                $match: { _id: mongoose.Types.ObjectId(productId), isDeleted: false }
+>>>>>>> eedb2127506b69053c1bdb65881ce95bba450471
             },
             {
                 $lookup: {
@@ -250,11 +254,20 @@ exports.getProductWithImage = async (req, res) => {
             },
             {
                 $project: {
+<<<<<<< HEAD
+=======
+                    _id: 1,
+>>>>>>> eedb2127506b69053c1bdb65881ce95bba450471
                     name: 1,
                     title: 1,
                     description: 1,
                     price: 1,
                     rating: 1,
+<<<<<<< HEAD
+=======
+                    category: 1,
+                    isTopSelling: 1,
+>>>>>>> eedb2127506b69053c1bdb65881ce95bba450471
                     'image.imageUrl': 1
                 }
             }
